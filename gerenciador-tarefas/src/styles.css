@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.form-check-input {
+    border: 1px solid rgba(25, 135, 84, .2); 
+    box-shadow: none;
+
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    border: #198754;
+    background-color: #198754;
+}

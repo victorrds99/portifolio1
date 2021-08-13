@@ -1,0 +1,22 @@
+.concluido{
+    text-decoration: line-through;
+}
+button{
+    width: 100px;
+    
+}
+th:first-child {
+    width: 60%;
+  }
+
+.ordenar-tarefa {
+    cursor: pointer;
+  }
+  #div-input {
+    display: flex;
+    justify-content: center;
+}
+
+#search-field {
+    width: 60%;
+}

@@ -1,0 +1,55 @@
+  <h2 class="text-center">
+  <i class="bi bi-card-list"></i>
+  Cadastro de Tarefas
+</h2>
+<form [formGroup]="form" novalidate>
+  <div class="mb-3 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+
+    <a class="navbar-brand"></a>
+    <input type="text" id="nome" formControlName="nome" class="form-control" [ngClass]="cssValidacao('nome')"
+      placeholder="Digite a tarefa..." />
+  </div>
+  <div class="mb-3 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center">
+    <button type="button" class="btn btn-success btn-sm" (click)="cadastrar()" [disabled]="form.invalid"
+      data-bs-toggle="modal" data-bs-target="#modalTarefa">
+      <i class="bi bi-check"></i>
+      Cadastrar
+    </button>
+    &nbsp;
+    <button type="button" class="btn btn-secondary btn-sm" [routerLink]="['/']">
+      <i class="bi bi-caret-left"></i>
+      Voltar
+    </button>
+  </div>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade bg-dark" id="modalTarefa" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTarefaLabel">Cadastro de tarefa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ng-container *ngIf="!processando">
+          <span *ngIf="!erro">Tarefa cadastrada com sucesso!</span>
+          <span *ngIf="erro">Erro cadastrando tarefa.</span>
+        </ng-container>
+        <div *ngIf="processando" class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          Nova tarefa
+        </button>
+        <button type="button" class="btn btn-info" data-bs-dismiss="modal" [routerLink]="['']">
+          Listar tarefas
+        </button>
+      </div>
+    </div>
+  </div>

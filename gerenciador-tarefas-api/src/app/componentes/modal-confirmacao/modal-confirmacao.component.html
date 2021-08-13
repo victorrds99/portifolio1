@@ -1,0 +1,20 @@
+<!-- Modal -->
+<div class="modal fade" [id]="'modalTarefa'" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTarefaLabel">{{titulo}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">{{conteudo}}</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="executarOperacao()" data-bs-dismiss="modal">
+            Sim
+          </button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+            Não
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
