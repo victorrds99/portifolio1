@@ -1,0 +1,33 @@
+<h1>Upload de arquivos</h1>
+<div class="alert alert-danger" role="alert" *ngIf="erroUpload">
+  erro fazendo upload do arquivo.
+</div>
+<div class="alert alert-warning" role="alert" *ngIf="formInvalido">
+  Selecione um arquivo.
+</div>
+<form>
+  <div class="mb-3">
+    <input 
+    class="form-control" 
+    type="file" 
+    (change)="armazenarArquivo($event)"
+    accept="image/*,application/pdf"
+    multiple
+    />
+  </div>
+  
+
+  <div class="mb-3">
+    <button type="submit" 
+  class="btn btn-primary"
+  (click)="enviarArquivo($event)">
+  Enviar Agora    
+  </button>
+  </div>
+
+</form>
+<ul *ngIf="urlsUpload.length > 0">
+  <li *ngFor="let url of urlsUpload">
+    <a [href]="url" target="_blank">{{ url }}</a>
+  </li>
+</ul>
